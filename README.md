@@ -4,7 +4,7 @@ An end-to-end ETL pipeline that ingests raw retail sales data, models it
 into a star schema, and answers analytical questions (month-over-month
 growth by category) using SQL window functions.
 
-Built with **Python + DuckDB** — a serverless, embedded analytical
+Built with **Python + DuckDB** - a serverless, embedded analytical
 database with the same SQL surface (CTEs, window functions, joins) as
 production warehouses like Snowflake or BigQuery, with zero setup cost.
 
@@ -42,7 +42,7 @@ Raw CSV (Superstore sales data)
 ```
 
 `fact_sales` holds only transaction measures (revenue, quantity, discount,
-profit) and foreign keys — no descriptive text is duplicated across rows.
+profit) and foreign keys - no descriptive text is duplicated across rows.
 
 ## What's in each layer
 
@@ -102,7 +102,7 @@ ORDER BY category, year, month;
 ```
 
 This uses a CTE, two joins across the star schema, and a window function
-(`LAG` + `PARTITION BY`) to compute growth without collapsing rows —
+(`LAG` + `PARTITION BY`) to compute growth without collapsing rows -
 each month/category keeps its own row while still "seeing" the prior
 month's value.
 
